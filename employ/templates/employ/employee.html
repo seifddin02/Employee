@@ -1,0 +1,49 @@
+{%  extends 'employ/main.html' %}
+
+{% block content %}
+
+	<br>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Employee: {{employee.name}}</h5>
+			<hr>
+			<a class="btn btn-sm btn-info btn-block" href="{% url 'update_employee' employee.id %}">Update Employee</a>
+			<a class="btn btn-sm btn-danger btn-block" href="{% url 'delete_employee' employee.id %}">Delete Employee</a>
+
+		</div>
+	</div>
+
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Contact Information</h5>
+			<hr>
+			<p>Email: {{employee.email}} </p>
+			<p>Phone: {{employee.phone}} </p>
+			<p>Address: {{employee.address}} </p>
+		</div>
+	</div>
+
+
+</div>
+
+<br>
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Additional Information</h5>
+			<hr>
+			<p>Employment Date: {{employee.employment_date}} </p>
+			<p>Date of Birth: {{employee.employment_date}} </p>
+			<p>Date Created: {{employee.date_created}} </p>
+		</div>
+	</div>
+</div>
+
+
+<br>
+
+
+
+{% endblock %}

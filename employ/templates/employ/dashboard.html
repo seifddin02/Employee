@@ -1,0 +1,66 @@
+{% extends 'employ/main.html' %}
+
+{% block content %}
+
+
+<br>
+<div class="row">
+	<div class="col">
+		<h5>Employees</h5>
+		<hr>
+		<div class="card card-body">
+
+			<form method="get">
+				{{myFilter.form}}
+
+		    <button class="btn btn-primary" type="submit">Search</button>
+		  </form>
+
+		</div>
+	</div>
+
+</div>
+<br>
+
+<br>
+
+<div class="row">
+
+
+	<div class="col-md-12">
+		<div class="card card-body">
+			<a class="btn btn-primary  btn-sm btn-block" href="{% url 'add_employee' %}">Add Employee</a>
+
+			<table class="table table-sm">
+				<tr>
+					<th></th>
+					<th>Name</th>
+					<th>Department</th>
+					<th>Phone</th>
+					<th>Email</th>
+				</tr>
+
+				{% for employee in employees %}
+					<tr>
+						<td><a class="btn btn-sm btn-info" href="{% url 'employee' employee.id %}">View</a></td>
+						<td>{{employee.name}}</td>
+						<td>{{employee.department}}</td>
+						<td>{{employee.phone}}</td>
+						<td>{{employee.email}}</td>
+					</tr>
+				{% endfor %}
+
+
+			</table>
+		</div>
+	</div>
+
+</div>
+<br>
+
+
+<br>
+
+
+{% endblock %}
+
